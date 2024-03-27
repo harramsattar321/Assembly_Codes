@@ -1,0 +1,19 @@
+Include irvine32.inc 
+.data 
+    mbyte BYTE 05,12,100 
+.code 
+main PROC 
+    Mov eax,0   ;move/store 0 into eax register
+    Mov ah,mbyte    ;move/store mbyte no 01 in ah register
+    Mov al, mbyte+1 ;mov/store mbyte no 02 in al register
+    call writeint   ;display value of eax in int form
+    call crlf   ;move the cursor on next line
+    call writehex   ;display value of eax in hexadecimal form
+    call crlf   ;move the cursor on next line
+    call writebin   ;display value of eax in binary form
+    call crlf   ;move the cursor on next line
+    call writechar  ;display value of eax in character form
+    call crlf   ;move the cursor on next line
+    exit
+main ENDP 
+END main
