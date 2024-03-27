@@ -1,10 +1,10 @@
 include irvine32.inc 
 .data 
     response TEXTEQU <'Hi, Thanks'>  ;initializing a string using TEXTEQU operator
-    response BYTE response  ;declare a variable and initialize it with above string
+    reply BYTE response  ;declare a variable and initialize it with above string
 .code 
 main PROC 
-    mov edx,offset response  ;get the offset of string into edx
+    mov edx,offset reply  ;get the offset of string into edx
     call writestring    ;display in string format
     exit
 main ENDP
