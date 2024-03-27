@@ -1,0 +1,16 @@
+Include irvine32.inc 
+.data 
+    greetings BYTE "Hi There",0 ;initializing a string 
+.code 
+main PROC 
+    Mov eax,LENGTHOF greetings ;LENGTHOF greetings calculate the length of string and store its value in eax register
+    call writeint   ;display value in decimal form
+    CALL crlf   ;move cursor on next line
+    Mov eax,SIZEOF greetings    ;SIZEOF greetings calculate the size of string and store its value in eax register
+    call writeint   ;display value in decimal form
+    call crlf   ;move cursor on next line
+    Mov edx,offset greetings  ;get OFFSET of string into EDX register
+    call writestring    ;display in string format
+    exit
+main ENDP 
+END main
